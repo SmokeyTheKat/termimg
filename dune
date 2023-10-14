@@ -1,0 +1,8 @@
+(env
+ (release
+  (ocamlopt_flags (:standard -O9))))
+(executable
+ (public_name termimg)
+ (name termimg)
+ (ocamlopt_flags -O3)
+ (libraries camlimages.all_formats terminal_size parany))
