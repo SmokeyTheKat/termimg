@@ -86,7 +86,7 @@ options:
   -a                                   - fits the image to terminal size
   -l                                   - stretches image to terminal size
   -m [char-map-name]                   - char map name to use to draw image
-  -u [char-map]                        - custom char map ex: '-m \" .:\"'
+  -u [char-map]                        - custom char map ex: '-u \" .:\"'
   -d                                   - double resolution instead of char map
   -c                                   - output colors
   -t [contrast]                        - contrast -255 to 255
