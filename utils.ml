@@ -16,6 +16,13 @@ let parse_float str =
 let clamp a b x =
 	min b @@ max a x
 
+let rec repeat n f =
+	if n = 0 then ()
+	else begin
+		f n;
+		repeat (pred n) f
+	end
+
 let get_terminal_width () =
 	(expect_some "could not read terminal size" (Terminal_size.get_columns ())) - 1
 

@@ -330,8 +330,7 @@ let load_gif_file opts =
 
 let play_gif opts imgs =
 	let (first, _) = List.hd imgs in
-	print_image opts first;
-	Terminal.cursor_move_to_line_start ();
+	Utils.repeat first.Rgba32.height (fun _ -> print_string "\n");
 	Terminal.cursor_move_up (first.Rgba32.height - 1);
 	let draw () =
 		let draw_frame (img, frame_delay) =
@@ -351,7 +350,6 @@ let play_gif opts imgs =
 		draw (); draw_loop ()
 	in draw ();
 	if opts.once = false then draw_loop ();
-	Terminal.cursor_move (first.Rgba32.width - 1) (first.Rgba32.height);
 	Terminal.flush ()
 
 let run opts =
